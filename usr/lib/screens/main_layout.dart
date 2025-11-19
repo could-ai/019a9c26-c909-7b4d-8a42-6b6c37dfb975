@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dashboard_page.dart';
 import 'customer_list_page.dart';
+import 'product_list_page.dart';
 
 class MainLayout extends StatefulWidget {
   const MainLayout({super.key});
@@ -15,6 +16,7 @@ class _MainLayoutState extends State<MainLayout> {
   final List<Widget> _pages = [
     const DashboardPage(),
     const CustomerListPage(),
+    const ProductListPage(),
     const Center(child: Text('设置页面 (开发中)')),
   ];
 
@@ -46,6 +48,11 @@ class _MainLayoutState extends State<MainLayout> {
                       icon: Icon(Icons.people_outline),
                       selectedIcon: Icon(Icons.people),
                       label: Text('客户管理'),
+                    ),
+                    NavigationRailDestination(
+                      icon: Icon(Icons.inventory_2_outlined),
+                      selectedIcon: Icon(Icons.inventory_2),
+                      label: Text('库存管理'),
                     ),
                     NavigationRailDestination(
                       icon: Icon(Icons.settings_outlined),
@@ -87,6 +94,11 @@ class _MainLayoutState extends State<MainLayout> {
                   icon: Icon(Icons.people_outline),
                   selectedIcon: Icon(Icons.people),
                   label: '客户',
+                ),
+                NavigationDestination(
+                  icon: Icon(Icons.inventory_2_outlined),
+                  selectedIcon: Icon(Icons.inventory_2),
+                  label: '库存',
                 ),
                 NavigationDestination(
                   icon: Icon(Icons.settings_outlined),
